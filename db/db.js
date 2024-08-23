@@ -1,14 +1,14 @@
-const {MongoClient} = require('mongodb')
-const url = 'mongodb://localhost:27017'
-const client = new MongoClient(url)
+const { MongoClient } = require( 'mongodb' )
+require( "dotenv" ).config()
+const client = new MongoClient( process.env.MONGO_URL )
 
-function connectDb(){
+function connectDb () {
 
-    const db = client.db('excelWithNode')
-    return  collection = db.collection('formdata')
+    const db = client.db( 'excelWithNode' )
+    return collection = db.collection( 'formdata' )
 
 }
 
 module.exports = {
-    connectDb : connectDb()
+    connectDb: connectDb()
 }
